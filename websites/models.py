@@ -31,7 +31,7 @@ class Website(models.Model):
     title = models.CharField(max_length=200, null=True)
     meta_description = models.CharField(max_length=200, null=True)
     alexa_rank = models.IntegerField(null=True)
-    category = models.ManyToManyField(WebsiteCategory)
+    category = models.ManyToManyField(WebsiteCategory, limit_choices_to=1)
     date_added = models.DateTimeField(editable=False, default=timezone.now)
     date_updated = models.DateTimeField(default=timezone.now)
 
