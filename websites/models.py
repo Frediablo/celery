@@ -31,12 +31,12 @@ class Website(models.Model):
     title = models.CharField(max_length=200, null=True)
     meta_description = models.CharField(max_length=200, null=True)
     alexa_rank = models.IntegerField(null=True)
-    category = models.ForeignKey(WebsiteCategory, on_delete=models.CASCADE)
+    category = models.ManyToManyField(WebsiteCategory)
     date_added = models.DateTimeField(editable=False, default=timezone.now)
     date_updated = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return '{}'.format(self.title)
+        return '{}'.format(self.url)
 
     class Meta:
         verbose_name_plural = "Websites"
