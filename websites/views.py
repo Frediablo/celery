@@ -6,7 +6,9 @@ from django.views.generic import ListView, DetailView, CreateView
 
 
 class WebsiteListView(ListView):
-    pass
+    queryset = Website.objects.all().order_by('-id')
+    template_name = 'websites/websites.html'
+    paginate_by = 5
 
 
 class WebsiteDetailView(DetailView):

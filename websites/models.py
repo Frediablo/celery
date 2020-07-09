@@ -28,8 +28,8 @@ class WebsiteCategory(models.Model):
 
 class Website(models.Model):
     url = models.TextField(max_length=2000)
-    title = models.CharField(max_length=200)
-    meta_description = models.CharField(max_length=200)
+    title = models.CharField(max_length=200, null=True)
+    meta_description = models.CharField(max_length=200, null=True)
     alexa_rank = models.IntegerField
     category = models.ForeignKey(WebsiteCategory, on_delete=models.CASCADE)
     date_added = models.DateTimeField(editable=False, default=timezone.now)

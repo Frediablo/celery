@@ -1,10 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'celery_app/base.html' %}
 
-</body>
-</html>
+{% block title %}
+    Websites
+{% endblock %}
+{% block content %}
+    <table class="table table-hover">
+        <tr>
+            <th>URL</th>
+            <th>Title</th>
+            <th>Alexa rank</th>
+            <th>Category</th>
+        </tr>
+    {% for object in object_list %}
+        <tr>
+{#        <td><input class="btn btn-primary" type="button" onclick="location.href='{{ object.get_absolute_url }}' " value="{{ object }}"/></td>#}
+            <td>{{ object.url }}</td>
+            <td>{{ object.title }}</td>
+            <td>{{ object.alexa_rank }}</td>
+            <td>{{ object.category }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock content %}

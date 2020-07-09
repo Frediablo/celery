@@ -1,0 +1,48 @@
+<!doctype html>
+
+<html>
+<head>
+
+<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+    <title>{% block title %}Celery App{% endblock %}</title>
+</head>
+<body>
+{#<nav class="container nav nav-pills nav-fill">#}
+{#  <a class="nav-item nav-link" href="{% url 'contacts' %}">Działania</a>#}
+{#  <a class="nav-item nav-link" href="{% url 'clients' %}">Klienci</a>#}
+{#  <a class="nav-item nav-link" href="{% url 'salesmen' %}">Handlowcy</a>#}
+{#  <a class="nav-item nav-link" href="{% url 'stats' %}">Statystyki</a>#}
+{#</nav>#}
+{#<div class="container p-3 mb-2 bg-light text-dark">#}
+{#    {% block head %}#}
+{#        <h1 class="container p-3 mb-2 bg-light text-dark">LEAN CRM</h1>#}
+{#        <input class="btn btn-warning" type="button" onclick="location.href= '/new_contact/'" value="NOWE DZIAŁANIE"/>#}
+{#        <input class="btn btn-primary" type="button" onclick="location.href= '/new_client/'" value="NOWY KLIENT"/>#}
+{#    {% endblock %}#}
+{#</div>#}
+
+    <div class="container p-3 mb-2 bg-light text-dark">
+        {% block content %}{% endblock %}
+    </div>
+{% if is_paginated %}
+    <div class="container">
+        {% include 'paginator.html' %}
+    </div>
+{% endif %}
+<footer class="container container p-3 mb-2 bg-light text-dark">
+    <strong>Made with Django by Frediablo</strong><br>{{ now }}
+</footer>
+
+<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</body>
+</html>
