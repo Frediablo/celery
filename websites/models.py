@@ -30,7 +30,7 @@ class Website(models.Model):
     url = models.TextField(max_length=2000)
     title = models.CharField(max_length=200, null=True)
     meta_description = models.CharField(max_length=200, null=True)
-    alexa_rank = models.IntegerField
+    alexa_rank = models.IntegerField(null=True)
     category = models.ForeignKey(WebsiteCategory, on_delete=models.CASCADE)
     date_added = models.DateTimeField(editable=False, default=timezone.now)
     date_updated = models.DateTimeField(default=timezone.now)
@@ -56,8 +56,8 @@ class Website(models.Model):
 class WebPage(models.Model):
     website = models.OneToOneField(Website, on_delete=models.CASCADE)
     url = models.TextField(max_length=2000, unique=True)
-    title = models.CharField(max_length=200)
-    meta_description = models.CharField(max_length=200)
+    title = models.CharField(max_length=200, null=True)
+    meta_description = models.CharField(max_length=200, null=True)
     date_added = models.DateTimeField(editable=False, default=timezone.now)
     date_updated = models.DateTimeField(default=timezone.now)
 
