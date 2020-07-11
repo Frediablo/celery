@@ -1,0 +1,19 @@
+{% extends 'celery_app/base.html'  %}
+
+{% block title %}
+    Create new website
+{% endblock %}
+
+{%  block content %}
+
+    <div class="container">
+            <form action="" method="post">{% csrf_token %}
+                {{ form.as_p }}
+                {{ object.choice_field_display }}
+                {% block enroll %}
+{#                <input class="btn btn-dark" type="submit" onclick="location.href='{{ object.get_absolute_url }}'" value="Zapisz nową stronę">#}
+                {% endblock %}
+{#                <input class="btn btn-dark" type="button" onclick="location.href= '//'" value="Back"/>#}
+            </form>
+    </div>
+{% endblock %}

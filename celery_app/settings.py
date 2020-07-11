@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'celery_app.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'celery_app',
+        'NAME': 'celery',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',

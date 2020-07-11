@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Website, WebsiteCategory, WebPage
-# from .filters import WebsiteFilter
 from django.views.generic import ListView, DetailView, CreateView
+from .forms import WebsiteModelForm
 
 
 # Create your views here.
@@ -15,4 +15,5 @@ class WebsiteDetailView(DetailView):
 
 
 class CreateWebsite(CreateView):
-    pass
+    form_class = WebsiteModelForm
+    template_name = 'websites/create_website.html'

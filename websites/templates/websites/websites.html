@@ -25,8 +25,7 @@
                 <td>{{ object.alexa_rank }}</td>
                 <td>{{ object.url }}</td>
                 <td>{{ object.title }}</td>
-                <td>{% for website_category in object.category.all %}
-                    {{ website_category.name }}{% endfor %}</td>
+                <td>{{ object.category }}</td>
             </tr>
         {% endfor %}
         </table>

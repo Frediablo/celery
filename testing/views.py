@@ -9,15 +9,12 @@ from websites.models import Website, WebsiteCategory
 
 # Create your views here.
 def ad_to_db(rank, url):
-
     get_category = WebsiteCategory.objects.get(pk=1)
 
     website = Website()
     website.alexa_rank = rank
     website.url = url
-    website.save()
-
-    website.category.add(get_category)
+    website.category = get_category
     website.save()
 
 
