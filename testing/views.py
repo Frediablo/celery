@@ -10,6 +10,8 @@ from websites.models import Website, WebsiteCategory
 # Create your views here.
 def ad_to_db(rank, url):
     get_category = WebsiteCategory.objects.get(pk=1)
+    get_category.count += 1
+    get_category.save()
 
     website = Website()
     website.alexa_rank = rank
@@ -27,6 +29,11 @@ def get_write(request):
         with data_zip.open('top-1m.csv') as csv_file:
             reader = csv.reader(TextIOWrapper(csv_file, 'utf-8'))
             counter = 0
+            Website.objects.all().delete()
+            get_category = WebsiteCategory.objects.get(pk=1)
+            get_category.count = 0
+            get_category.save()
+
             for row in reader:
                 print(row)
                 get_rank = row[0]

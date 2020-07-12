@@ -14,19 +14,6 @@
     <title>{% block title %}Celery App{% endblock %}</title>
 </head>
 <body>
-{#<div>#}
-{#    <nav class="container nav nav-pills nav-fill p-3 mb-2 bg-light text-dark">#}
-{#        <a class="nav-item nav-link" href="{% url 'create-website' %}">New Website</a>#}
-{#    </nav>#}
-{#</div>#}
-
-{#<div class="container p-3 mb-2 bg-light text-dark">#}
-{#    {% block head %}#}
-{#        <h1 class="container p-3 mb-2 bg-light text-dark">LEAN CRM</h1>#}
-{#        <input class="btn btn-warning" type="button" onclick="location.href= '/new_contact/'" value="NOWE DZIAŁANIE"/>#}
-{#        <input class="btn btn-primary" type="button" onclick="location.href= '/new_client/'" value="NOWY KLIENT"/>#}
-{#    {% endblock %}#}
-{#</div>#}
 
     <div class="container p-3 mb-2 bg-light text-dark">
         {% block content %}{% endblock %}

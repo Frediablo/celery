@@ -29,3 +29,4 @@ class WebsiteDetailView(DetailView):
 class CreateWebsite(CreateView):
     form_class = WebsiteModelForm
     template_name = 'websites/create_website.html'
+

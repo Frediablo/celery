@@ -9,7 +9,7 @@ class WebsiteCategory(models.Model):
     description = models.TextField(max_length=2000)
     date_added = models.DateTimeField(editable=False, default=timezone.now)
     date_updated = models.DateTimeField(default=timezone.now)
-    count = models.IntegerField
+    count = models.IntegerField(default=0)
 
     def __str__(self):
         return '{}'.format(self.name)

@@ -4,4 +4,23 @@
     {{ website }}
 {% endblock %}
 {% block content %}
+    <div>
+    <h2>{{ website }}</h2><br>
+    <p><strong>Alexa Rank: </strong>{{ website.alexa_rank }}</p>
+    <p><strong>Title: </strong>{{ website.title }}</p>
+    <p><strong>URL: </strong>{{ website.url }}</p>
+    <p><strong>Category: </strong>{{ website.category }}</p>
+    <p><strong>Meta description:</strong>{{ website.meta_descritpion }}</p>
+    </div>
+    <br>
+    <div>
+    <h4>Webpages:</h4>
+    {% for webpage in website.webpages.all %}
+    <p>{{ webpage.title }}</p>
+    {% endfor %}
+    </div>
+    <br>
+    <div>
+    <input class="btn btn-dark" type="button" onclick="location.href= '/'" value="Back"/>
+    </div>
 {% endblock %}
