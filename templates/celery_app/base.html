@@ -14,12 +14,12 @@
     <title>{% block title %}Celery App{% endblock %}</title>
 </head>
 <body>
-{#<nav class="container nav nav-pills nav-fill">#}
-{#  <a class="nav-item nav-link" href="{% url 'contacts' %}">Działania</a>#}
-{#  <a class="nav-item nav-link" href="{% url 'clients' %}">Klienci</a>#}
-{#  <a class="nav-item nav-link" href="{% url 'salesmen' %}">Handlowcy</a>#}
-{#  <a class="nav-item nav-link" href="{% url 'stats' %}">Statystyki</a>#}
-{#</nav>#}
+{#<div>#}
+{#    <nav class="container nav nav-pills nav-fill p-3 mb-2 bg-light text-dark">#}
+{#        <a class="nav-item nav-link" href="{% url 'create-website' %}">New Website</a>#}
+{#    </nav>#}
+{#</div>#}
+
 {#<div class="container p-3 mb-2 bg-light text-dark">#}
 {#    {% block head %}#}
 {#        <h1 class="container p-3 mb-2 bg-light text-dark">LEAN CRM</h1>#}
@@ -44,6 +44,7 @@
     <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
     <script>
+        {#$('.mydatatable').DataTable();#}
         $('.mydatatable').DataTable({
             initComplete: function () {
                 this.api().columns().every( function () {
@@ -66,8 +67,7 @@
 
                 });
                 });
-            }
-        });
+            }});
     </script>
 
 </body>

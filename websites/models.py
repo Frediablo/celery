@@ -50,11 +50,11 @@ class Website(models.Model):
         return super(Website, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse_lazy('entity-detail-view', kwargs={'id': self.id})
+        return reverse_lazy('website-detail-view', kwargs={'id': self.id})
 
 
 class WebPage(models.Model):
-    website = models.OneToOneField(Website, on_delete=models.CASCADE)
+    website = models.ForeignKey(Website, on_delete=models.CASCADE)
     url = models.TextField(max_length=2000, unique=True)
     title = models.CharField(max_length=200, null=True)
     meta_description = models.CharField(max_length=200, null=True)

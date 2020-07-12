@@ -4,30 +4,45 @@
     Websites
 {% endblock %}
 {% block content %}
-{#    <div>#}
-{#    {{ filter.form }}#}
-{#    </div>#}
-    <div>
-        <table class="table table-striped table-bordered mydatatable" style="width: 100%">
-        <thead>
-        <tr>
-            <th>Id</th>
-            <th>Alexa rank</th>
-            <th>URL</th>
-            <th>Title</th>
-            <th>Category</th>
-        </tr>
-        </thead>
-        {% for object in object_list %}
-            <tr>
-    {#        <td><input class="btn btn-primary" type="button" onclick="location.href='{{ object.get_absolute_url }}' " value="{{ object }}"/></td>#}
-                <td>{{ object.id }}</td>
-                <td>{{ object.alexa_rank }}</td>
-                <td>{{ object.url }}</td>
-                <td>{{ object.title }}</td>
-                <td>{{ object.category }}</td>
-            </tr>
-        {% endfor %}
-        </table>
-    </div>
+    <section>
+        <div class="container p-3 mb-2 bg-light text-dark">
+                <input class="btn btn-warning" type="button" onclick="location.href= '/create-website/'" value="CREATE NEW WEBSITE"/>
+        </div>
+    </section>
+
+    <section>
+        <div>
+            <table class="table table-striped table-bordered mydatatable" style="width: 100%">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Alexa rank</th>
+                        <th>URL</th>
+                        <th>Title</th>
+                        <th>Category</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for object in object_list %}
+                        <tr>
+                            <td>{{ object.id }}</td>
+                            <td>{{ object.alexa_rank }}</td>
+                            <td><a href="{% url 'website-detail-view' object.id %}">{{ object.url }}</a></td>
+                            <td>{{ object.title }}</td>
+                            <td>{{ object.category }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Id</th>
+                        <th>Alexa rank</th>
+                        <th>URL</th>
+                        <th>Title</th>
+                        <th>Category</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </section>
 {% endblock content %}
